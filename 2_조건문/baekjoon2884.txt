@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int h = sc.nextInt();
+		int m = sc.nextInt();
+		sc.nextLine();
+		int tmp;
+		
+		if(m < 45) {
+			tmp = 45-m;
+			m = 60-tmp;
+			if(h==0) {
+				h=23;
+			} else {
+				h--;				
+			}
+		} else {
+			m = m - 45;
+		}
+	System.out.print(h+" ");
+	System.out.println(m);
+	}
+}
