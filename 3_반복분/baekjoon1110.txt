@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		String n = sc.nextLine();
+		String number = null;
+		int cnt = 0;
+
+		while(!n.equals(number)) {
+			if(cnt>0) {
+				if(number.length()<2) {
+					number="0"+number;
+				}
+				int n1 = Integer.parseInt(number.substring(0,1));
+				int n2 = Integer.parseInt(number.substring(1,2));
+				
+				number = (n2+"")+(n1+n2>9?((n1+n2)+"").substring(1,2):("0"+(n1+n2)+"").substring(1,2));
+				cnt++;
+			} else {
+				if(n.length()<2) {
+					n="0"+n;
+				}
+				int n1 = Integer.parseInt(n.substring(0,1));
+				int n2 = Integer.parseInt(n.substring(1,2));
+				
+				number = (n2+"")+(n1+n2>9?((n1+n2)+"").substring(1,2):("0"+(n1+n2)+"").substring(1,2));
+				cnt++;
+			}
+		}
+		System.out.println(cnt);
+	}
+}
