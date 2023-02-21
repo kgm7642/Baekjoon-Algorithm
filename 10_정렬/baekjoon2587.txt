@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class baekjoon {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[5];
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		int sum=0, av = 0, mi = 0;
+		for(int i=0; i<arr.length; i++) {
+			sum+=arr[i];
+		}
+		av = sum/arr.length;
+		for(int i=0; i<arr.length; i++) {
+			for(int j=i; j<arr.length; j++) {
+				if(arr[i]>arr[j]) {
+					int tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
+				}
+			}
+		}
+		System.out.println(av);
+		System.out.println(arr[arr.length/2]);
+	}
+}
