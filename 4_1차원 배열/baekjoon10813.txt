@@ -1,0 +1,27 @@
+package study;
+
+import java.util.Scanner;
+
+class Main {	
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int m = s.nextInt();
+		int[] arr = new int[n+1];
+		
+		for(int i=1; i<=n; i++) {
+			arr[i] = i;
+		}
+		for(int a=0; a<m; a++) {
+			int i = s.nextInt();
+			int j = s.nextInt();
+			int temp = arr[i];
+			
+			arr[i] = arr[j];
+			arr[j] = temp;
+		}
+		for(int i=1; i<=n; i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+}
